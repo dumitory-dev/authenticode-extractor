@@ -8,10 +8,12 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "quasar build"
+    "build": "quasar build",
+    "format": "prettier --write \"{src,tests}/**/*.{ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
+    "postcss": "^8.4.45",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
@@ -20,11 +22,13 @@
     "@quasar/app-vite": "^1.9.0",
     "@types/node": "^12.20.21",
     "autoprefixer": "^10.4.2",
+    "prettier": "^3.3.3",
     "typescript": "~5.5.4"
   },
   "engines": {
     "node": "^20 || ^18 || ^16",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "packageManager": "yarn@4.4.1"
 }

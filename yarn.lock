@@ -738,6 +738,8 @@ __metadata:
     "@quasar/extras": "npm:^1.16.4"
     "@types/node": "npm:^12.20.21"
     autoprefixer: "npm:^10.4.2"
+    postcss: "npm:^8.4.45"
+    prettier: "npm:^3.3.3"
     quasar: "npm:^2.16.0"
     typescript: "npm:~5.5.4"
     vue: "npm:^3.4.18"
@@ -3152,7 +3154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.13, postcss@npm:^8.4.44":
+"postcss@npm:^8.4.13, postcss@npm:^8.4.44, postcss@npm:^8.4.45":
   version: 8.4.45
   resolution: "postcss@npm:8.4.45"
   dependencies:
@@ -3160,6 +3162,15 @@ __metadata:
     picocolors: "npm:^1.0.1"
     source-map-js: "npm:^1.2.0"
   checksum: 10c0/ad6f8b9b1157d678560373696109745ab97a947d449f8a997acac41c7f1e4c0f3ca4b092d6df1387f430f2c9a319987b1780dbdc27e35800a88cde9b606c1e8f
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "prettier@npm:3.3.3"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
   languageName: node
   linkType: hard
 
