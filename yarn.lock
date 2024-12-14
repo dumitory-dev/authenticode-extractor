@@ -114,6 +114,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lapo/asn1js@npm:^2.0.4-prev":
+  version: 2.0.4
+  resolution: "@lapo/asn1js@npm:2.0.4"
+  bin:
+    dumpASN1: dumpASN1.js
+  checksum: 10c0/f2b96393ba0f445a0403eba55bb8ba5e623dbcec113e5fa674b926d9abea427c4685594b3abd57d35960602acf10902387ede907040d27ae6c0016089c017950
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -240,10 +249,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@quasar/extras@npm:^1.16.4":
-  version: 1.16.12
-  resolution: "@quasar/extras@npm:1.16.12"
-  checksum: 10c0/663557f7e97ff52f7da66de147ec83e56667c8d7adf7dcf832fdff750f645dc26c591e45c6c35023e70ccd53a964d4e71c8009d2b9beb1b41576bfd49bd63529
+"@quasar/extras@npm:^1.16.15":
+  version: 1.16.15
+  resolution: "@quasar/extras@npm:1.16.15"
+  checksum: 10c0/393e6ef13a418f0c74fd2c9d1716289e365ed643d5aea9926a2e037bced4f3820ed2f82ddd88507cf72651dafdcb14febea908adb7c336d58be8597479c8353e
   languageName: node
   linkType: hard
 
@@ -374,6 +383,13 @@ __metadata:
   version: 2.0.4
   resolution: "@types/http-errors@npm:2.0.4"
   checksum: 10c0/494670a57ad4062fee6c575047ad5782506dd35a6b9ed3894cea65830a94367bd84ba302eb3dde331871f6d70ca287bfedb1b2cf658e6132cd2cbd427ab56836
+  languageName: node
+  linkType: hard
+
+"@types/lapo__asn1js@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "@types/lapo__asn1js@npm:1.2.5"
+  checksum: 10c0/ef04a620bfce0e6dbaf6a089fca771551ab7dc7de5e935cbf01e2a5e3fc8e3567f0683ec3074f7c30b6be4dba059122b92313f0ff71618b8a4836ca7eaf49852
   languageName: node
   linkType: hard
 
@@ -716,6 +732,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asn1js@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "asn1js@npm:3.0.5"
+  dependencies:
+    pvtsutils: "npm:^1.3.2"
+    pvutils: "npm:^1.1.3"
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/bb8eaf4040c8f49dd475566874986f5976b81bae65a6b5526e2208a13cdca323e69ce297bcd435fdda3eb6933defe888e71974d705b6fcb14f2734a907f8aed4
+  languageName: node
+  linkType: hard
+
 "astral-regex@npm:^2.0.0":
   version: 2.0.0
   resolution: "astral-regex@npm:2.0.0"
@@ -734,9 +761,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "authenticode-extractor@workspace:."
   dependencies:
+    "@lapo/asn1js": "npm:^2.0.4-prev"
     "@quasar/app-vite": "npm:^1.9.0"
-    "@quasar/extras": "npm:^1.16.4"
+    "@quasar/extras": "npm:^1.16.15"
+    "@types/lapo__asn1js": "npm:^1.2.5"
     "@types/node": "npm:^12.20.21"
+    asn1js: "npm:^3.0.5"
     autoprefixer: "npm:^10.4.2"
     postcss: "npm:^8.4.45"
     prettier: "npm:^3.3.3"
@@ -3208,6 +3238,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pvtsutils@npm:^1.3.2":
+  version: 1.3.5
+  resolution: "pvtsutils@npm:1.3.5"
+  dependencies:
+    tslib: "npm:^2.6.1"
+  checksum: 10c0/d425aed316907e0b447a459bfb97c55d22270c3cfdba5a07ec90da0737b0e40f4f1771a444636f85bb6a453de90ff8c6b5f4f6ddba7597977166af49974b4534
+  languageName: node
+  linkType: hard
+
+"pvutils@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "pvutils@npm:1.1.3"
+  checksum: 10c0/23489e6b3c76b6afb6964a20f891d6bef092939f401c78bba186b2bfcdc7a13904a0af0a78f7933346510f8c1228d5ab02d3c80e968fd84d3c76ff98d8ec9aac
+  languageName: node
+  linkType: hard
+
 "qs@npm:6.11.0":
   version: 6.11.0
   resolution: "qs@npm:6.11.0"
@@ -3870,7 +3916,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.1.0":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.6.1":
   version: 2.7.0
   resolution: "tslib@npm:2.7.0"
   checksum: 10c0/469e1d5bf1af585742128827000711efa61010b699cb040ab1800bcd3ccdd37f63ec30642c9e07c4439c1db6e46345582614275daca3e0f4abae29b0083f04a6

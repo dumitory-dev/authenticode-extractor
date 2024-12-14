@@ -27,9 +27,12 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@lapo/asn1js", "npm:2.0.4"],\
           ["@quasar/app-vite", "virtual:9f8fc62b042476f8e9c81b95302ea894260a9e8a380a5d051cec5c27ed2dae05f138340acdcdebcac033b46c10b0b282faf6cd9323aee0b21830395c695f20ef#npm:1.9.5"],\
-          ["@quasar/extras", "npm:1.16.12"],\
+          ["@quasar/extras", "npm:1.16.15"],\
+          ["@types/lapo__asn1js", "npm:1.2.5"],\
           ["@types/node", "npm:12.20.55"],\
+          ["asn1js", "npm:3.0.5"],\
           ["autoprefixer", "virtual:9f8fc62b042476f8e9c81b95302ea894260a9e8a380a5d051cec5c27ed2dae05f138340acdcdebcac033b46c10b0b282faf6cd9323aee0b21830395c695f20ef#npm:10.4.20"],\
           ["postcss", "npm:8.4.45"],\
           ["prettier", "npm:3.3.3"],\
@@ -171,6 +174,15 @@ const RAW_RUNTIME_STATE =
           ["@jridgewell/trace-mapping", "npm:0.3.25"],\
           ["@jridgewell/resolve-uri", "npm:3.1.2"],\
           ["@jridgewell/sourcemap-codec", "npm:1.5.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@lapo/asn1js", [\
+      ["npm:2.0.4", {\
+        "packageLocation": "./.yarn/cache/@lapo-asn1js-npm-2.0.4-a59908d2b5-f2b96393ba.zip/node_modules/@lapo/asn1js/",\
+        "packageDependencies": [\
+          ["@lapo/asn1js", "npm:2.0.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -332,10 +344,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@quasar/extras", [\
-      ["npm:1.16.12", {\
-        "packageLocation": "./.yarn/cache/@quasar-extras-npm-1.16.12-91650cc92b-663557f7e9.zip/node_modules/@quasar/extras/",\
+      ["npm:1.16.15", {\
+        "packageLocation": "./.yarn/cache/@quasar-extras-npm-1.16.15-79dcc7b53a-393e6ef13a.zip/node_modules/@quasar/extras/",\
         "packageDependencies": [\
-          ["@quasar/extras", "npm:1.16.12"]\
+          ["@quasar/extras", "npm:1.16.15"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -505,6 +517,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-http-errors-npm-2.0.4-8b39ca5d7c-494670a57a.zip/node_modules/@types/http-errors/",\
         "packageDependencies": [\
           ["@types/http-errors", "npm:2.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/lapo__asn1js", [\
+      ["npm:1.2.5", {\
+        "packageLocation": "./.yarn/cache/@types-lapo__asn1js-npm-1.2.5-d3dff5382f-ef04a620bf.zip/node_modules/@types/lapo__asn1js/",\
+        "packageDependencies": [\
+          ["@types/lapo__asn1js", "npm:1.2.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -910,6 +931,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["asn1js", [\
+      ["npm:3.0.5", {\
+        "packageLocation": "./.yarn/cache/asn1js-npm-3.0.5-cf5558af33-bb8eaf4040.zip/node_modules/asn1js/",\
+        "packageDependencies": [\
+          ["asn1js", "npm:3.0.5"],\
+          ["pvtsutils", "npm:1.3.5"],\
+          ["pvutils", "npm:1.1.3"],\
+          ["tslib", "npm:2.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["astral-regex", [\
       ["npm:2.0.0", {\
         "packageLocation": "./.yarn/cache/astral-regex-npm-2.0.0-f30d866aab-f63d439cc3.zip/node_modules/astral-regex/",\
@@ -933,9 +966,12 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["authenticode-extractor", "workspace:."],\
+          ["@lapo/asn1js", "npm:2.0.4"],\
           ["@quasar/app-vite", "virtual:9f8fc62b042476f8e9c81b95302ea894260a9e8a380a5d051cec5c27ed2dae05f138340acdcdebcac033b46c10b0b282faf6cd9323aee0b21830395c695f20ef#npm:1.9.5"],\
-          ["@quasar/extras", "npm:1.16.12"],\
+          ["@quasar/extras", "npm:1.16.15"],\
+          ["@types/lapo__asn1js", "npm:1.2.5"],\
           ["@types/node", "npm:12.20.55"],\
+          ["asn1js", "npm:3.0.5"],\
           ["autoprefixer", "virtual:9f8fc62b042476f8e9c81b95302ea894260a9e8a380a5d051cec5c27ed2dae05f138340acdcdebcac033b46c10b0b282faf6cd9323aee0b21830395c695f20ef#npm:10.4.20"],\
           ["postcss", "npm:8.4.45"],\
           ["prettier", "npm:3.3.3"],\
@@ -3663,6 +3699,25 @@ const RAW_RUNTIME_STATE =
           ["proxy-addr", "npm:2.0.7"],\
           ["forwarded", "npm:0.2.0"],\
           ["ipaddr.js", "npm:1.9.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["pvtsutils", [\
+      ["npm:1.3.5", {\
+        "packageLocation": "./.yarn/cache/pvtsutils-npm-1.3.5-b3122eabea-d425aed316.zip/node_modules/pvtsutils/",\
+        "packageDependencies": [\
+          ["pvtsutils", "npm:1.3.5"],\
+          ["tslib", "npm:2.7.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["pvutils", [\
+      ["npm:1.1.3", {\
+        "packageLocation": "./.yarn/cache/pvutils-npm-1.1.3-da8b07d6cf-23489e6b3c.zip/node_modules/pvutils/",\
+        "packageDependencies": [\
+          ["pvutils", "npm:1.1.3"]\
         ],\
         "linkType": "HARD"\
       }]\

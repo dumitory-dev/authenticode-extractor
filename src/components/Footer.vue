@@ -1,39 +1,136 @@
 <template>
-  <q-footer class="footer bg-grey-1 q-pa-md">
-    <div class="row justify-center items-center">
-      <div class="q-mx-sm">
-        <a target="_blank" href="https://github.com/dumitory-dev">
-          <img src="~assets/icons/iconmonstr-github-1.svg" alt="github icon" class="footer__icon" />
-        </a>
+  <q-footer bordered class="bg-primary mobile-footer">
+    <q-toolbar class="toolbar-container">
+      <div class="mobile-footer-content">
+        <div class="social-links">
+          <q-btn
+            v-for="link in socialLinks"
+            :key="link.name"
+            flat
+            round
+            :icon="link.icon"
+            :href="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="grey-1"
+            class="social-btn"
+            size="s"
+          >
+            <q-tooltip>{{ link.name }}</q-tooltip>
+          </q-btn>
+        </div>
+
+        <div class="text-center text-weight-medium text-grey-1 developer-name">
+          {{ developerName }}
+        </div>
+
+        <div class="text-grey-1 year-text">
+          {{ currentYear }}
+        </div>
       </div>
-      <div class="q-mx-sm">
-        <a target="_blank">
-          <img src="~assets/icons/iconmonstr-linkedin-3.svg" alt="linkedin icon" class="footer__icon" />
-        </a>
-      </div>
-    </div>
-    <div class="q-mx-sm text-custom">dumitory-dev</div>
-    <div class="text-custom">2024</div>
+    </q-toolbar>
   </q-footer>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { computed } from 'vue'
 
-<style scoped>
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+interface SocialLink {
+  name: string
+  url: string
+  icon: string
 }
 
-.footer__icon {
-  width: 30px;
-  height: 30px;
-}
+const developerName = 'dumitory-dev'
+const currentYear = computed(() => new Date().getFullYear())
 
-.text-custom {
-  color: #080808;
-  font-size: 20px;
+const socialLinks: SocialLink[] = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/dumitory-dev',
+    icon: 'code',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/your-profile',
+    icon: 'person',
+  },
+]
+</script>
+
+<style lang="scss">
+.q-footer {
+  .q-btn {
+    &::before {
+      box-shadow: none;
+    }
+
+    &:hover {
+      .q-icon {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mobile-footer-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 4px 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .q-btn {
+      padding: 4px;
+
+      .q-icon {
+        font-size: 16px;
+      }
+    }
+
+    .developer-name {
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 4px 0;
+    }
+
+    .year-text {
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 4px 0;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .mobile-footer-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 8px;
+    }
+
+    .q-btn {
+      padding: 8px;
+    }
+
+    .developer-name,
+    .year-text {
+      font-size: 1rem;
+    }
+  }
 }
 </style>

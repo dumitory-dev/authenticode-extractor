@@ -6,6 +6,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import('pages/Main.vue'),
   },
   {
+    path: '/help',
+    component: () => import('pages/Help.vue'),
+  },
+  {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
   },

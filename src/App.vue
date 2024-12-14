@@ -5,5 +5,8 @@
 <script setup lang="ts">
 defineOptions({
   name: 'App',
+  config: {
+    dark: 'auto'
+  }
 })
 </script>

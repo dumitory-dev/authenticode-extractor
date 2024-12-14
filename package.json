@@ -1,9 +1,9 @@
 {
   "name": "authenticode-extractor",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
-  "author": "Dumitory <blackmesa2018@gmail.com>",
+  "description": "Authenticode Extractor",
+  "productName": "Authenticode Extractor",
+  "author": "Dumitory",
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
@@ -12,7 +12,9 @@
     "format": "prettier --write \"{src,tests}/**/*.{ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
-    "@quasar/extras": "^1.16.4",
+    "@lapo/asn1js": "^2.0.4-prev",
+    "@quasar/extras": "^1.16.15",
+    "asn1js": "^3.0.5",
     "postcss": "^8.4.45",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.9.0",
+    "@types/lapo__asn1js": "^1.2.5",
     "@types/node": "^12.20.21",
     "autoprefixer": "^10.4.2",
     "prettier": "^3.3.3",

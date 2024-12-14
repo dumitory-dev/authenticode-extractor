@@ -1,42 +1,44 @@
 <template>
   <div class="full-page row justify-center items-center">
     <q-card class="q-pa-md" style="max-width: 400px; width: 100%">
-      <q-card-section class="text-h6 text-center">Select a file to get started</q-card-section>
+      <q-inner-loading :showing="isLoading" color="primary">
+        <q-spinner-dots size="100px" color="primary" />
+      </q-inner-loading>
+      <q-card-section class="text-h6 text-center">Select a file</q-card-section>
 
       <q-card-section>
-        <q-file filled bottom-slots v-model="model" label="Label" counter>
+        <q-file :disable="isLoading" accept=".exe" filled bottom-slots v-model="file" label="Please, select only .exe files" counter >
           <template v-slot:prepend>
-            <q-icon name="cloud_upload" @click.stop.prevent />
+            <q-icon name="upload" @click.stop.prevent />
           </template>
           <template v-slot:append>
-            <q-icon name="close" @click.stop.prevent="model = null" class="cursor-pointer" />
+            <q-icon name="close" @click.stop.prevent="file = null" class="cursor-pointer" />
           </template>
-          <template v-slot:hint>Only .exe files</template>
         </q-file>
       </q-card-section>
 
       <q-card-section>
         <div class="text-subtitle1 q-mb-md">Choose type to convert:</div>
-        <q-radio v-model="encryptionMode" val="aes" label="ASN1 decoded" color="primary" />
-        <q-radio v-model="encryptionMode" val="rc4" label="Raw Binary" color="primary" />
+        <q-option-group
+          v-model="convertMode"
+          :options="convertOptions"
+          type="radio"
+          inline
+          color="primary"
+          aria-label="Encryption Mode"
+        />
       </q-card-section>
 
       <q-card-actions>
-        <q-btn label="Convert" color="primary" @click="encryptFile" class="full-width" />
+        <q-btn label="Extract" color="primary" @click="convertFile" class="full-width" />
       </q-card-actions>
     </q-card>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-const model = ref(null)
-const encryptionMode = ref('aes')
-
-const encryptFile = () => {
-  // Your logic here
-}
+<script lang="ts" setup>
+import { useFileConverter } from '../composables/use-file-converter'
+const { file, convertMode, convertOptions, convertFile,isLoading } = useFileConverter()
 </script>
 
 <style scoped>
