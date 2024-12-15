@@ -1,6 +1,6 @@
 //@ts-ignore
 import { ASN1 } from '@lapo/asn1js'
-import { IAuthenticodeExtractor } from '../types/types'
+import { IAuthenticodeExtractor } from '@/types/types'
 
 interface ASN1Value {
   typeName(): string

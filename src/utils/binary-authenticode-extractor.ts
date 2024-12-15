@@ -1,5 +1,5 @@
-import { PE_CONSTANTS } from '../constants/constants'
-import { IAuthenticodeExtractor } from '../types/types'
+import { PE_CONSTANTS } from '@/constants/constants'
+import { IAuthenticodeExtractor } from '@/types/types'
 
 export class BinaryAuthenticodeExtractor implements IAuthenticodeExtractor {
   private readonly data: DataView
@@ -69,7 +69,10 @@ export class BinaryAuthenticodeExtractor implements IAuthenticodeExtractor {
     }
   }
 
-  private getDigitalSignatureInfo(rvaCountOffset: number): { digitalSignature: number; digitalSignatureSize: number } {
+  private getDigitalSignatureInfo(rvaCountOffset: number): {
+    digitalSignature: number
+    digitalSignatureSize: number
+  } {
     const securityDirectory = rvaCountOffset + 4 + 4 * 8
     const virtualAddressOfSecurityDirectory = this.data.getUint32(securityDirectory, true)
     const size = this.data.getUint32(securityDirectory + 4, true)
@@ -79,8 +82,9 @@ export class BinaryAuthenticodeExtractor implements IAuthenticodeExtractor {
     }
 
     return {
-      digitalSignature: virtualAddressOfSecurityDirectory + PE_CONSTANTS.ATTRIBUTE_CERTIFICATE_HEADER_SIZE,
-      digitalSignatureSize: size - PE_CONSTANTS.ATTRIBUTE_CERTIFICATE_HEADER_SIZE
+      digitalSignature:
+        virtualAddressOfSecurityDirectory + PE_CONSTANTS.ATTRIBUTE_CERTIFICATE_HEADER_SIZE,
+      digitalSignatureSize: size - PE_CONSTANTS.ATTRIBUTE_CERTIFICATE_HEADER_SIZE,
     }
   }
 }

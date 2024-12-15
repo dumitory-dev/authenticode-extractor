@@ -26,20 +26,13 @@
       </div>
 
       <q-btn flat dense round icon="menu" class="lt-sm">
-        <q-menu>
+        <q-menu color="black">
           <q-list padding style="min-width: 180px">
             <q-item clickable v-close-popup class="text-primary">
               <q-item-section avatar>
                 <q-icon name="help_outline" />
               </q-item-section>
-              <q-item-section>Help</q-item-section>
-            </q-item>
-
-            <q-item clickable v-close-popup class="text-primary">
-              <q-item-section avatar>
-                <q-icon name="dark_mode" />
-              </q-item-section>
-              <q-item-section>Toggle Dark Mode</q-item-section>
+              <q-btn flat round dense :to="{ path: '/help' }">Help</q-btn>
             </q-item>
           </q-list>
         </q-menu>

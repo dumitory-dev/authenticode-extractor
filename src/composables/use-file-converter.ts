@@ -1,8 +1,8 @@
 import { ref, computed } from 'vue'
-import { FileConverterModel, ConvertMode } from '../models/file-converter-model'
-import { Asn1AuthenticodeExtractor } from '../utils/asn1-authenticode-extractor'
-import { BinaryAuthenticodeExtractor } from '../utils/binary-authenticode-extractor'
-import { IAuthenticodeExtractor } from '../types/types'
+import { FileConverterModel, ConvertMode } from '@/models/file-converter-model'
+import { Asn1AuthenticodeExtractor } from '@/utils/asn1-authenticode-extractor'
+import { BinaryAuthenticodeExtractor } from '@/utils/binary-authenticode-extractor'
+import { IAuthenticodeExtractor } from '@/types/types'
 import { Notify } from 'quasar'
 
 export const ConvertModeLabels: Record<ConvertMode, string> = {
@@ -75,10 +75,7 @@ export function useFileConverter() {
           const fileName = file.value.name
           const result = new Blob([_getBinaryAuthenticode(new Uint8Array(fileData))])
           isLoading.value = false
-          downloadFile(
-            result,
-            fileName + '.p7b'
-          )
+          downloadFile(result, fileName + '.p7b')
           break
         }
         default: {
@@ -98,6 +95,6 @@ export function useFileConverter() {
     convertMode,
     convertFile,
     convertOptions,
-    isLoading
+    isLoading,
   }
 }

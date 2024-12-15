@@ -1,6 +1,6 @@
 export enum ConvertMode {
-  ASN1 = "asn1",
-  BINARY = "binary",
+  ASN1 = 'asn1',
+  BINARY = 'binary',
 }
 
 export interface FileConverterModel {

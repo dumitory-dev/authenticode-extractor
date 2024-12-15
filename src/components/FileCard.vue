@@ -1,13 +1,21 @@
 <template>
   <div class="full-page row justify-center items-center">
-    <q-card class="q-pa-md" style="max-width: 400px; width: 100%">
+    <q-card class="q-pa-md" style="max-width: 400px; width: 95%">
       <q-inner-loading :showing="isLoading" color="primary">
         <q-spinner-dots size="100px" color="primary" />
       </q-inner-loading>
       <q-card-section class="text-h6 text-center">Select a file</q-card-section>
 
       <q-card-section>
-        <q-file :disable="isLoading" accept=".exe" filled bottom-slots v-model="file" label="Please, select only .exe files" counter >
+        <q-file
+          :disable="isLoading"
+          accept=".exe"
+          filled
+          bottom-slots
+          v-model="file"
+          label="Please, select only .exe files"
+          counter
+        >
           <template v-slot:prepend>
             <q-icon name="upload" @click.stop.prevent />
           </template>
@@ -37,8 +45,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useFileConverter } from '../composables/use-file-converter'
-const { file, convertMode, convertOptions, convertFile,isLoading } = useFileConverter()
+import { useFileConverter } from '@/composables/use-file-converter'
+const { file, convertMode, convertOptions, convertFile, isLoading } = useFileConverter()
 </script>
 
 <style scoped>
